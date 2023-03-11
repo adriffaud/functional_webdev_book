@@ -8,8 +8,7 @@ defmodule IslandEngine.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: IslandEngine.Worker.start_link(arg)
-      # {IslandEngine.Worker, arg}
+      {Registry, keys: :unique, name: Registry.Game}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
