@@ -6,7 +6,7 @@ defmodule IslandsEngine.GameSupervisor do
   def start_link(_opts), do: DynamicSupervisor.start_link(__MODULE__, :ok, name: __MODULE__)
 
   def start_child(name) do
-    spec = {Game, name: name}
+    spec = {Game, name}
     DynamicSupervisor.start_child(__MODULE__, spec)
   end
 

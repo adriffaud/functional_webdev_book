@@ -7,8 +7,7 @@ defmodule IslandsEngine.Game do
   @players [:player1, :player2]
 
   # Client 
-  def start_link(opts) do
-    name = Keyword.fetch!(opts, :name)
+  def start_link(name) do
     GenServer.start_link(__MODULE__, name, name: via_tuple(name))
   end
 
