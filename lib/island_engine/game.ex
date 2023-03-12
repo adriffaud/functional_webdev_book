@@ -1,5 +1,5 @@
 defmodule IslandEngine.Game do
-  use GenServer, start: {__MODULE__, :start_link, []}, restart: :transient
+  use GenServer, restart: :transient
 
   alias IslandEngine.{Board, Coordinate, Guesses, Island, Rules}
 
@@ -7,8 +7,10 @@ defmodule IslandEngine.Game do
   @players [:player1, :player2]
 
   # Client 
-  def start_link(name) when is_binary(name),
-    do: GenServer.start_link(__MODULE__, name, name: via_tuple(name))
+  def start_link(opts) do
+    name = Keyword.fetch!(opts, :name)
+    GenServer.start_link(__MODULE__, name, name: via_tuple(name))
+  end
 
   def via_tuple(name), do: {:via, Registry, {Registry.Game, name}}
 
