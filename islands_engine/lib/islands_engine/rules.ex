@@ -1,4 +1,4 @@
-defmodule IslandEngine.Rules do
+defmodule IslandsEngine.Rules do
   alias __MODULE__
 
   defstruct state: :initialized,

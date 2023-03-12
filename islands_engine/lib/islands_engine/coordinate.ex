@@ -1,4 +1,4 @@
-defmodule IslandEngine.Coordinate do
+defmodule IslandsEngine.Coordinate do
   alias __MODULE__
 
   @enforce_keys [:row, :col]

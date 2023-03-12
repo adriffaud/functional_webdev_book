@@ -1,5 +1,5 @@
-defmodule IslandEngine.Guesses do
-  alias IslandEngine.{Coordinate, Guesses}
+defmodule IslandsEngine.Guesses do
+  alias IslandsEngine.{Coordinate, Guesses}
 
   @enforce_keys [:hits, :misses]
   defstruct [:hits, :misses]

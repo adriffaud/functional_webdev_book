@@ -1,7 +1,7 @@
-defmodule IslandEngine.GameSupervisor do
+defmodule IslandsEngine.GameSupervisor do
   use DynamicSupervisor
 
-  alias IslandEngine.Game
+  alias IslandsEngine.Game
 
   def start_link(_opts), do: DynamicSupervisor.start_link(__MODULE__, :ok, name: __MODULE__)
 
